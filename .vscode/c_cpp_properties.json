@@ -1,0 +1,22 @@
+{
+  "configurations": [
+    {
+      "name": "ESP-IDF",
+      "includePath": [
+        "${workspaceFolder}/**",
+        // Add your ESP-IDF include paths below. Example:
+        "C:/Users/quynh/esp/v5.4.1/esp-idf/components/**",
+        "C:/Users/quynh/esp/v5.4.1/esp-idf/tools/**",
+        "C:/Users/quynh/esp/v5.4.1/esp-idf/components/esp_common/include",
+        "C:/Users/quynh/esp/v5.4.1/esp-idf/components/esp_system/include"
+        ],
+      "compilerPath": "C:/Users/quynh/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x64"
+    }
+  ],
+  "version": 4
+}
+// NOTE: Make sure the ESP-IDF and toolchain are installed and the paths above are correct for your system.
+// If using environment variables like ${env:IDF_PATH}, ensure they are set in your system or VSCode environment.

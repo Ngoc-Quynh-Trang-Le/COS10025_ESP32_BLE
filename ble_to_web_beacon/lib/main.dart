@@ -34,7 +34,8 @@ class _MyAppState extends State<MyApp> {
     FlutterBluePlus.startScan(timeout: const Duration(seconds: 0));
     _scanSubscription = FlutterBluePlus.scanResults.listen((List<ScanResult> results) {
       for (ScanResult result in results) {
-        final deviceName = result.device.platformName;
+        final deviceName = result.advertisementData.advName;
+        print("🔍 Found device: $deviceName");
 
         if (deviceName.isEmpty) continue;
         if (!beaconToUrl.containsKey(deviceName)) continue;
