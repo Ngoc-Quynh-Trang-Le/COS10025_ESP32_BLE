@@ -1,0 +1,32 @@
+{
+  "theme": "default",
+  "themeVariables": {
+    "darkMode": false,
+    "fontSize": "16px",
+    "fontFamily": "Arial, sans-serif",
+    "primaryColor": "#ffffff",
+    "primaryBorderColor": "#9e9e9e",
+    "lineColor": "#424242",
+    "edgeLabelBackground": "#8f8f8f",
+    "nodeTextColor": "#000000"
+  },
+  "logLevel": 1,
+  "securityLevel": "strict",
+  "startOnLoad": true,
+  "arrowMarkerAbsolute": false,
+  "flowchart": {
+    "curve": "basis",
+    "nodeSpacing": 60,
+    "rankSpacing": 50,
+    "htmlLabels": true,
+    "titleTopMargin": 25,
+    "subGraphTitleMargin": {
+      "vertical": 10,
+      "horizontal": 5
+    },
+    "diagramPadding": 10,
+    "wrappingWidth": 180,
+    "useMaxWidth": true,
+    "defaultRenderer": "dagre-d3"
+  }
+}

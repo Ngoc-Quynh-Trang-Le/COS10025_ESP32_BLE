@@ -1,0 +1,19 @@
+graph TD
+ESP32_Beacon["&nbsp; &nbsp; ESP32 BLE Beacon &nbsp; &nbsp;"] -->|"Advertises BLE Name"| Flutter_App["&nbsp; &nbsp; &nbsp; &nbsp;Flutter BLE App &nbsp; &nbsp; &nbsp; &nbsp;"]
+Flutter_App -->|"Scans and Detects"| Mapping_Dictionary["&nbsp;Name-to-URL Dictionary&nbsp;"]
+Mapping_Dictionary -->|"Matches to URL"| Phone_Browser["&nbsp; Default Mobile Browser &nbsp; &nbsp;"]
+Phone_Browser -->|"Loads Page"| Story_Page["&nbsp; &nbsp; Storytelling Webpage &nbsp; &nbsp;"]
+Story_Page -->|"Displays"| Multimedia_Content["&nbsp; Audio + Images + Text + <br> Optional Video &nbsp;"]
+
+classDef inputNode fill:#d1eaff,stroke:#0277bd,stroke-width:2px;
+classDef appNode fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+classDef logicNode fill:#fff3e0,stroke:#ef6c00,stroke-width:2px;
+classDef webNode fill:#fffde7,stroke:#f9a825,stroke-width:2px;
+classDef outputNode fill:#fce4ec,stroke:#c2185b,stroke-width:2px;
+
+class ESP32_Beacon inputNode;
+class Flutter_App appNode;
+class Mapping_Dictionary logicNode;
+class Phone_Browser webNode;
+class Story_Page webNode;
+class Multimedia_Content outputNode;
