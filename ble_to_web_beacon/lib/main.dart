@@ -16,13 +16,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   static const beaconToUrl = {
-    'TraKieu_Apsara_Relief': 'https://www.youtube.com',
-    'Tara_Bodhisattva_Statue': 'https://www.facebook.com',
+    'TraKieu_Apsara_Relief': 'https://www.facebook.com',
+    'Tara_Bodhisattva_Statue': 'https://www.youtube.com',
   };
 
   final Map<String, DateTime> _lastLaunchTimes = {};
   final Duration _cooldown = const Duration(seconds: 30);
-  late StreamSubscription<ScanResult> _scanSubscription;
+  late StreamSubscription<List<ScanResult>> _scanSubscription;
 
   @override
   void initState() {
@@ -32,9 +32,9 @@ class _MyAppState extends State<MyApp> {
 
   void _startScanning() {
     FlutterBluePlus.startScan(timeout: const Duration(seconds: 0));
-    _scanSubscription = FlutterBluePlus.scanResults.listen((results) {
+    _scanSubscription = FlutterBluePlus.scanResults.listen((List<ScanResult> results) {
       for (ScanResult result in results) {
-        final deviceName = result.device.name;
+        final deviceName = result.device.platformName;
 
         if (deviceName.isEmpty) continue;
         if (!beaconToUrl.containsKey(deviceName)) continue;
@@ -46,9 +46,9 @@ class _MyAppState extends State<MyApp> {
           _lastLaunchTimes[deviceName] = now;
           final url = beaconToUrl[deviceName]!;
           _launchUrl(url);
-          print('Launched: $url');
+          // Page launched for matching beacon
         } else {
-          print('Cooldown active for $deviceName');
+          // Cooldown active, skipping launch
         }
       }
     });
@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     } else {
-      print('Could not launch $url');
+      // Could not launch URL
     }
   }
 
