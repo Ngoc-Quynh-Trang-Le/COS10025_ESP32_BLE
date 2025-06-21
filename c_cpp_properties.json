@@ -1,0 +1,33 @@
+{
+  "configurations": [
+    {
+      "name": "windows-gcc-x64",
+      "includePath": [
+        "${workspaceFolder}",
+        "${workspaceFolder}/**",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.2.0/libraries/BLE/src",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.2.0/cores/esp32",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.2.0/libraries",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/soc/esp32/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32h2/include/soc/esp32h2/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32c6/include/soc/esp32c6/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32s2/include/soc/esp32s2/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32s3/include/soc/esp32s3/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32p4/include/soc/esp32p4/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32c3/include/soc/esp32c3/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/**",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/**",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp32-arduino-libs/idf-release_v5.4-2f7dcd86-v1/esp32/include/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp-rv32/2411/riscv32-esp-elf/include",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/tools/esp-x32/2411/xtensa-esp-elf/include/",
+        "C:/Users/quynh/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.2.0/variants/**"
+      ],
+      "compilerPath": "D:/Software/msys64/mingw64/bin/gcc.exe",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x64",
+      "compilerArgs": []
+    }
+  ],
+  "version": 4
+}
