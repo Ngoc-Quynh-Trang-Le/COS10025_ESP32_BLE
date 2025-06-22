@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Scanning for cultural beacons...'),
+          child: Text('Opening Tra Kieu Apsara Relief Artifact Story...'),
         ),
       ),
     );

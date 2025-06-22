@@ -1,0 +1,23 @@
+esp-idf/esp_gdbstub/CMakeFiles/__idf_esp_gdbstub.dir/src/port/xtensa/gdbstub-entry.S.obj: \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/esp_gdbstub/src/port/xtensa/gdbstub-entry.S \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa/coreasm.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa/hal.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/core-isa.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/tie-asm.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa/corebits.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
+ E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/config/sdkconfig.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/freertos/config/include/freertos/FreeRTOSConfig.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/freertos/config/xtensa/include/freertos/FreeRTOSConfig_arch.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa_config.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa_context.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa_context.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/xtensa/include/xtensa_timer.h \
+ C:/Users/quynh/esp/v5.4.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/xtensa_rtos.h
