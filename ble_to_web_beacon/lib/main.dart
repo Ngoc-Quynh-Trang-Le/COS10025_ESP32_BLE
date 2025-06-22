@@ -1,7 +1,16 @@
+/// COS10025 BLE-to-Web Cultural Storytelling System
+/// Flutter app for automatic BLE-triggered Cham artifact storytelling.
+/// - Always-on BLE scan (flutter_reactive_ble)
+/// - Matches artifact name, launches URL in external browser (url_launcher)
+/// - No user interaction, no in-app WebView, silent operation
+/// - See README.md for full project details
+library;
+
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:flutter_reactive_ble/flutter_reactive_ble.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:permission_handler/permission_handler.dart' as perm;
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +30,9 @@ class _MyAppState extends State<MyApp> {
   };
 
   final Map<String, DateTime> _lastLaunchTimes = {};
-  final Duration _cooldown = const Duration(seconds: 30);
-  late StreamSubscription<List<ScanResult>> _scanSubscription;
+  final Duration _cooldown = const Duration(seconds: 30); // Reduced for testing
+  late StreamSubscription<DiscoveredDevice> _scanSubscription;
+  final FlutterReactiveBle _ble = FlutterReactiveBle();
 
   @override
   void initState() {
@@ -30,44 +40,50 @@ class _MyAppState extends State<MyApp> {
     _startScanning();
   }
 
-  void _startScanning() {
-    FlutterBluePlus.startScan(timeout: const Duration(seconds: 0));
-    _scanSubscription = FlutterBluePlus.scanResults.listen((List<ScanResult> results) {
-      for (ScanResult result in results) {
-        final deviceName = result.advertisementData.advName;
-        print("🔍 Found device: $deviceName");
-
-        if (deviceName.isEmpty) continue;
-        if (!beaconToUrl.containsKey(deviceName)) continue;
-
+  void _startScanning() async {
+    print('Starting BLE scan...');
+    try {
+      var loc = await perm.Permission.location.request();
+      var scan = await perm.Permission.bluetoothScan.request();
+      var conn = await perm.Permission.bluetoothConnect.request();
+      print('Permission status: location=$loc, bluetoothScan=$scan, bluetoothConnect=$conn');
+    } catch (e) {
+      print('WARNING: permission_handler not available or failed: $e');
+    }
+    _scanSubscription = _ble.scanForDevices(withServices: [], scanMode: ScanMode.lowLatency).listen((device) {
+      print('Device: ${device.id} Name: ${device.name}');
+      if (device.name.isNotEmpty && beaconToUrl.containsKey(device.name)) {
         final now = DateTime.now();
-        final lastLaunch = _lastLaunchTimes[deviceName];
-
+        final lastLaunch = _lastLaunchTimes[device.name];
         if (lastLaunch == null || now.difference(lastLaunch) > _cooldown) {
-          _lastLaunchTimes[deviceName] = now;
-          final url = beaconToUrl[deviceName]!;
-          _launchUrl(url);
-          // Page launched for matching beacon
+          _lastLaunchTimes[device.name] = now;
+          print('MATCHED: ${device.name} - launching URL');
+          _launchUrl(beaconToUrl[device.name]!);
         } else {
-          // Cooldown active, skipping launch
+          print('MATCHED: ${device.name} - cooldown active, not launching');
         }
       }
+    }, onError: (e) {
+      print('BLE scan error: $e');
     });
   }
 
   Future<void> _launchUrl(String url) async {
     final uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      // Could not launch URL
+    try {
+      final launched = await launchUrl(uri, mode: LaunchMode.externalApplication);
+      if (!launched) {
+        print('launchUrl returned false for: $url');
+      }
+    } catch (e) {
+      print('Exception launching URL $url: $e');
     }
   }
 
   @override
   void dispose() {
     _scanSubscription.cancel();
-    FlutterBluePlus.stopScan();
+    _ble.deinitialize();
     super.dispose();
   }
 

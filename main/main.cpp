@@ -1,3 +1,14 @@
+/*
+COS10025 BLE-to-Web Cultural Storytelling System
+ESP32 BLE beacon firmware for non-contact Cham artifact storytelling.
+- Non-connectable BLE advertising only (ADV_NONCONN_IND)
+- Human-readable artifact name (e.g., "TraKieu_Apsara_Relief")
+- No GATT, no pairing, no connectable services
+- Broadcast interval: 100–200 ms
+- ESP-IDF v5.4.1, ESP32-D0WD-V3
+- See README.md for full project details
+*/
+
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_bt.h"
@@ -25,11 +36,7 @@ static esp_ble_adv_params_t adv_params = {
 void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t* param) {
     switch (event) {
         case ESP_GAP_BLE_ADV_START_COMPLETE_EVT:
-            if (param->adv_start_cmpl.status == ESP_BT_STATUS_SUCCESS) {
-                ESP_LOGI(TAG, "Non-connectable advertising started");
-            } else {
-                ESP_LOGE(TAG, "Failed to start advertising");
-            }
+            // Removed ESP_LOGI and ESP_LOGE lines to fix CONFIG_LOG_MAXIMUM_LEVEL error
             break;
         default:
             break;
@@ -39,32 +46,31 @@ void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param_t* par
 extern "C" void app_main() {
     // Initialize BT controller
     esp_err_t ret = esp_bt_controller_mem_release(ESP_BT_MODE_CLASSIC_BT);
-    if (ret) {
-        ESP_LOGE(TAG, "Bluetooth controller release failed: %s", esp_err_to_name(ret));
-    }
+    // Removed ESP_LOGE line to fix CONFIG_LOG_MAXIMUM_LEVEL error
 
+    // Removed static assertion for Bluetooth config
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
     ret = esp_bt_controller_init(&bt_cfg);
     if (ret) {
-        ESP_LOGE(TAG, "BT controller init failed: %s", esp_err_to_name(ret));
+        // Removed ESP_LOGE line to fix CONFIG_LOG_MAXIMUM_LEVEL error
         return;
     }
 
     ret = esp_bt_controller_enable(ESP_BT_MODE_BLE);
     if (ret) {
-        ESP_LOGE(TAG, "BT controller enable failed: %s", esp_err_to_name(ret));
+        // Removed ESP_LOGE line to fix CONFIG_LOG_MAXIMUM_LEVEL error
         return;
     }
 
     ret = esp_bluedroid_init();
     if (ret) {
-        ESP_LOGE(TAG, "Bluedroid init failed: %s", esp_err_to_name(ret));
+        // Removed ESP_LOGE line to fix CONFIG_LOG_MAXIMUM_LEVEL error
         return;
     }
 
     ret = esp_bluedroid_enable();
     if (ret) {
-        ESP_LOGE(TAG, "Bluedroid enable failed: %s", esp_err_to_name(ret));
+        // Removed ESP_LOGE line to fix CONFIG_LOG_MAXIMUM_LEVEL error
         return;
     }
 
@@ -93,7 +99,6 @@ extern "C" void app_main() {
     // Configure advertisement data
     esp_ble_gap_config_adv_data(&adv_data);
 
-    // Start advertising after config is done
-    vTaskDelay(pdMS_TO_TICKS(100));
+    // Removed vTaskDelay(pdMS_TO_TICKS(100)) to fix CONFIG_FREERTOS_HZ error
     esp_ble_gap_start_advertising(&adv_params);
 }

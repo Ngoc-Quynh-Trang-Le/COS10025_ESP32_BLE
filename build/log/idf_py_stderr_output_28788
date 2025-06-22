@@ -1,0 +1,8 @@
+CMake Error at C:/Users/quynh/esp/v5.4.1/esp-idf/tools/cmake/project.cmake:472 (message):
+  Directory specified in EXTRA_COMPONENT_DIRS doesn't exist:
+  C:/Users/quynh/esp/v5.4.1/esp-idf/examples/bluetooth/bluedroid/ble/ble_adv
+Call Stack (most recent call first):
+  C:/Users/quynh/esp/v5.4.1/esp-idf/tools/cmake/project.cmake:556 (__project_init)
+  CMakeLists.txt:7 (project)
+
+

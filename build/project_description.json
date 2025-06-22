@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ble_beacon_nonconnectable",
-    "project_version":    "98cc940-dirty",
+    "project_version":    "1bb226a-dirty",
     "project_path":       "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE",
     "idf_path":           "C:/Users/quynh/esp/v5.4.1/esp-idf",
     "build_dir":          "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build",
@@ -1190,13 +1190,13 @@
             "dir": "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/main",
             "type": "LIBRARY",
             "lib": "__idf_main",
-            "reqs": [],
+            "reqs": [ "bt", "nvs_flash" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/esp-idf/main/libmain.a",
             "sources": [ "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/main/main.cpp" ],
-            "include_dirs": []
+            "include_dirs": [ "." ]
         },
         "mbedtls": {
             "alias": "idf::mbedtls",
@@ -2841,11 +2841,11 @@
             "prefix": "idf",
             "dir": "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/main",
             "lib": "__idf_main",
-            "reqs": [],
+            "reqs": [ "bt", "nvs_flash" ],
             "priv_reqs": [],
             "managed_reqs": [],
             "managed_priv_reqs": [],
-            "include_dirs": []
+            "include_dirs": [ "." ]
         }
     },
     "debug_prefix_map_gdbinit": "",
