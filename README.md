@@ -1,6 +1,6 @@
-# COS10025 BLE-to-Web Cultural Storytelling System
+# :earth_asia: COS10025 BLE-to-Web Cultural Storytelling System
 
-## Project Overview
+## :page_with_curl: Project Overview
 
 This project was developed for the **COS10025 – Technology in an Indigenous Context** unit at Swinburne University of Technology.  
 It implements a **non-contact digital storytelling system** to respectfully present cultural narratives from Cham heritage, using:
@@ -13,7 +13,7 @@ The solution avoids interaction, pairing, or scanning to align with Cham cultura
 
 ---
 
-## ESP32 BLE Firmware (main.cpp via ESP-IDF)
+## :signal_strength: Layer :one:: ESP32 BLE Firmware (main.cpp via ESP-IDF)
 
 Each ESP32 device functions as a **non-connectable BLE beacon**, configured with:
 
@@ -37,11 +37,11 @@ Deployment details:
 
 ---
 
-## Flutter Mobile App (`main.dart`)
+## :calling: Layer :two:: Flutter Mobile App (`main.dart`)
 
 The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
 
-Key behaviors:
+:key: Key behaviors:
 
 1. Scans for BLE advertisements using `flutter_blue_plus`
 2. Matches `advertisement.advName` against a static map:
@@ -58,32 +58,18 @@ Key behaviors:
 
 ---
 
-## Design and Cultural Requirements
-
-:white_check_mark: No Bluetooth pairing  
-:white_check_mark: No connectable services or user input  
-:white_check_mark: Beacon-only broadcast model (non-invasive)  
-:white_check_mark: Respectful artifact naming only  
-:white_check_mark: Can be used by multiple visitors simultaneously  
-:white_check_mark: Artifact proximity awareness without touching the objects  
+## :art: Design and Cultural Requirements
 
 :heavy_check_mark: No Bluetooth pairing  
-:heavy_check_mark: No connectable services or user input  
+:heavy_check_mark: No connectable services or user input
 :heavy_check_mark: Beacon-only broadcast model (non-invasive)  
 :heavy_check_mark: Respectful artifact naming only  
 :heavy_check_mark: Can be used by multiple visitors simultaneously  
 :heavy_check_mark: Artifact proximity awareness without touching the objects  
 
-- [x] No Bluetooth pairing  
-- [x] No connectable services or user input
-- [x] Beacon-only broadcast model (non-invasive)  
-- [x] Respectful artifact naming only  
-- [x] Can be used by multiple visitors simultaneously  
-- [x] Artifact proximity awareness without touching the objects  
-
 ---
 
-## Platform Constraints
+## :arrow_forward: Platform Constraints
 
 | Layer           | Specification                                                   |
 |-----------------|-----------------------------------------------------------------|
@@ -94,7 +80,7 @@ Key behaviors:
 
 ---
 
-## Notes
+## :pencil: Notes
 
 - **BLE mode:** `ADV_NONCONN_IND` only
 - **No GATT / services / pairing**
