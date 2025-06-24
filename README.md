@@ -40,7 +40,6 @@ Deployment details:
 The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
 
 :key: Key behaviors:
-
 1. Scans for BLE advertisements using `flutter_blue_plus`
 2. Matches `advertisement.advName` against a static map:
    
