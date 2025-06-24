@@ -42,11 +42,12 @@ Deployment details:
 ## :calling: Layer 2: Flutter Mobile App (`main.dart`)
 
 The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
-
+\
 :key: Key behaviors:
-
-1. Scans for BLE advertisements using `flutter_reactive_ble`
-2. Matches `device.name` against a static map:
+\
+:one: Scans for BLE advertisements using `flutter_reactive_ble`.
+\
+:two: Matches `device.name` against a static map:
 
    ```dart
    const beaconToUrl = {
@@ -55,10 +56,33 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
    };
    ```
 
-3. On match, launch the linked cultural webpage via `url_launcher`
-4. Cooldown enforced to avoid repeat triggers within 30 seconds
-5. Requires **no UI interaction**
-6. Optimized for **offline-friendly sideloading** on Android devices
+:three: Opens the corresponding URL using `url_launcher` when a match is found.
+\
+:four: Cooldown enforced to avoid repeat triggers within 30 seconds.
+\
+:five: Requires **no UI interaction**.
+\
+:six: Optimized for **offline-friendly sideloading** on Android devices.
+
+
+The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
+:key: Key behaviors:
+:one: Scans for BLE advertisements using `flutter_reactive_ble`.
+:two: Matches `device.name` against a static map:
+
+   ```dart
+   const beaconToUrl = {
+     'TraKieu_Apsara_Relief': 'https://google.com',
+     'Tara_Bodhisattva_Statue': 'https://youtube.com',
+   };
+   ```
+
+:three: Opens the corresponding URL using `url_launcher` when a match is found.
+:four: Cooldown enforced to avoid repeat triggers within 30 seconds.
+:five: Requires **no UI interaction**.
+:six: Optimized for **offline-friendly sideloading** on Android devices.
+
+The app is designed to be sideloaded as an `.apk` file, with no Play Store dependencies.
 
 ---
 
