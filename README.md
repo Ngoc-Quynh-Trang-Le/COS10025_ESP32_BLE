@@ -67,6 +67,13 @@ Key behaviors:
 :white_check_mark: Can be used by multiple visitors simultaneously  
 :white_check_mark: Artifact proximity awareness without touching the objects  
 
+:heavy_check_mark: No Bluetooth pairing  
+:heavy_check_mark: No connectable services or user input  
+:heavy_check_mark: Beacon-only broadcast model (non-invasive)  
+:heavy_check_mark: Respectful artifact naming only  
+:heavy_check_mark: Can be used by multiple visitors simultaneously  
+:heavy_check_mark: Artifact proximity awareness without touching the objects  
+
 - [x] No Bluetooth pairing  
 - [x] No connectable services or user input
 - [x] Beacon-only broadcast model (non-invasive)  
