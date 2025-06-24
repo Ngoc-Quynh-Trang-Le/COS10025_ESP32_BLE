@@ -2,12 +2,14 @@
 
 ## :page_with_curl: Project Overview
 
-This project was developed for the **COS10025 – Technology in an Indigenous Context** unit at Swinburne University of Technology.  
+This project was developed for the *COS10025 – Technology in an Indigenous Context Project unit* at Swinburne University of Technology.  
 It implements a **non-contact digital storytelling system** to respectfully present cultural narratives from Cham heritage, using:
 
 - **ESP32 BLE beacons** broadcasting artifact identifiers
 - A **Flutter Android app** detecting BLE names and opening linked web stories
-- Online storytelling pages (text, images, audio)
+- Online storytelling pages (text, images, audio) for 2 Cham artifacts:
+  - :one: Tra Kieu Apsara Relief
+  - :two: Tara Bodhisattva Statue
 
 The solution avoids interaction, pairing, or scanning to align with Cham cultural practices.
 
@@ -16,6 +18,7 @@ The solution avoids interaction, pairing, or scanning to align with Cham cultura
 ## :signal_strength: Layer 1: ESP32 BLE Firmware (main.cpp via ESP-IDF)
 
 Each ESP32 device functions as a **non-connectable BLE beacon**, configured with:
+
 - **BLE advertising name** hardcoded to either:
   - `"TraKieu_Apsara_Relief"`
   - `"Tara_Bodhisattva_Statue"`
@@ -29,8 +32,9 @@ Each ESP32 device functions as a **non-connectable BLE beacon**, configured with
 - Compiled using `idf.py build`, flashed via `idf.py -p COMx flash`
 
 Deployment details:
+
 - Battery powered (e.g., USB power bank)
-- Cased for physical protection in public museum settings
+- Transparent Acrylic Case for physical protection in public museum settings
 - No user action required for operation
 
 ---
@@ -40,8 +44,9 @@ Deployment details:
 The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
 
 :key: Key behaviors:
-1. Scans for BLE advertisements using `flutter_blue_plus`
-2. Matches `advertisement.advName` against a static map:
+
+1. Scans for BLE advertisements using `flutter_reactive_ble`
+2. Matches `device.name` against a static map:
    
    ```dart
    const beaconToUrl = {
@@ -51,7 +56,7 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
    ```
 3. On match: launches the linked cultural webpage via `url_launcher`
 4. Cooldown enforced to avoid repeat triggers within 30 seconds
-5. Requires **no UI interaction** (runs in background silently)
+5. Requires **no UI interaction**
 6. Optimized for **offline-friendly sideloading** on Android devices
 
 ---
@@ -83,7 +88,7 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
 - **BLE mode:** `ADV_NONCONN_IND` only
 - **No GATT / services / pairing**
 - **Human-readable BLE names only**
-- **Use only:** `flutter_blue_plus`, `url_launcher`
+- **Use only:** `flutter_reactive_ble`, `url_launcher`
 - **No use of:** QR, NFC, GPS, user prompts
 - **Silent scanning, automatic behavior**
 - **Respects cultural protocols for minimal interference**
