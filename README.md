@@ -1,7 +1,5 @@
 # :earth_asia: COS10025 BLE-to-Web Cultural Storytelling System
 
----
-
 ## :page_with_curl: Project Overview
 
 This project was developed for the **COS10025 – Technology in an Indigenous Context** unit at Swinburne University of Technology.  
