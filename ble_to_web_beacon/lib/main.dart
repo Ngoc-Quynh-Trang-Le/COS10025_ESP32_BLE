@@ -8,8 +8,8 @@
 ///   - Output: Opens artifact webpage via external browser (url_launcher)
 ///   - Design: Fully automatic, culturally respectful, no tap, no pairing
 ///
-/// ⚠️ NOTE: BLE beacon names must match exactly with those hardcoded below.
-/// ⚠️ Artifact story content must be hosted and accessible via Android browser.
+/// NOTE: BLE beacon names must match exactly with those hardcoded below.
+///       Artifact story content must be hosted and accessible via Android browser.
 
 library;
 
