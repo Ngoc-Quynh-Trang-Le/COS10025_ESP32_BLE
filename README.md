@@ -1,5 +1,7 @@
 # :earth_asia: COS10025 BLE-to-Web Cultural Storytelling System
 
+---
+
 ## :page_with_curl: Project Overview
 
 This project was developed for the **COS10025 – Technology in an Indigenous Context** unit at Swinburne University of Technology.  
@@ -13,7 +15,7 @@ The solution avoids interaction, pairing, or scanning to align with Cham cultura
 
 ---
 
-## :signal_strength: Layer :one:: ESP32 BLE Firmware (main.cpp via ESP-IDF)
+## :signal_strength: Layer 1: ESP32 BLE Firmware (main.cpp via ESP-IDF)
 
 Each ESP32 device functions as a **non-connectable BLE beacon**, configured with:
 
@@ -37,7 +39,7 @@ Deployment details:
 
 ---
 
-## :calling: Layer :two:: Flutter Mobile App (`main.dart`)
+## :calling: Layer 2: Flutter Mobile App (`main.dart`)
 
 The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + URL launcher**.
 
@@ -89,3 +91,5 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
 - **No use of:** QR, NFC, GPS, user prompts
 - **Silent scanning, automatic behavior**
 - **Respects cultural protocols for minimal interference**
+
+---
