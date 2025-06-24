@@ -60,12 +60,12 @@ Key behaviors:
 
 ## Design and Cultural Requirements
 
-✅ No Bluetooth pairing  
-✅ No connectable services or user input  
-✅ Beacon-only broadcast model (non-invasive)  
-✅ Respectful artifact naming only  
-✅ Can be used by multiple visitors simultaneously  
-✅ Artifact proximity awareness without touching the objects  
+[ ] No Bluetooth pairing  
+[ ] No connectable services or user input  
+[ ] Beacon-only broadcast model (non-invasive)  
+[ ] Respectful artifact naming only  
+[ ] Can be used by multiple visitors simultaneously  
+[ ] Artifact proximity awareness without touching the objects  
 
 ---
 
@@ -75,12 +75,12 @@ Key behaviors:
 |-----------------|-----------------------------------------------------------------|
 | BLE Firmware    | ESP-IDF v5.4.1 (C++ - `main.cpp`)                               |
 | Mobile App      | Flutter (Android only, `main.dart`)                             |
-| Deployment      | Sideload `.apk` on Redmi A2                                     |
-| Story Hosting   | Pages hosted at `https://facebook.com` or `https://youtube.com` |
+| Deployment      | Sideload `.apk` on Android devices                              |
+| Story Hosting   | Pages hosted at `https://google.com` or `https://youtube.com`   |
 
 ---
 
-## Notes for Copilot / GPT Agents
+## Notes
 
 - **BLE mode:** `ADV_NONCONN_IND` only
 - **No GATT / services / pairing**
@@ -89,16 +89,3 @@ Key behaviors:
 - **No use of:** QR, NFC, GPS, user prompts
 - **Silent scanning, automatic behavior**
 - **Respects cultural protocols for minimal interference**
-
----
-
-## ✅ Placement Guide
-
-| File            | Action                                                          |
-|-----------------|-----------------------------------------------------------------|
-| `README.md`     | Place the full Markdown block above                             |
-| `main.cpp`      | Paste C++-style comment block at the top (`/* ... */`)          |
-| `main.dart`     | Paste condensed comment block (`///`) in first 30 lines         |
-| `pubspec.yaml`  | Ensure dependencies listed: `flutter_blue_plus`, `url_launcher` |
-
----
