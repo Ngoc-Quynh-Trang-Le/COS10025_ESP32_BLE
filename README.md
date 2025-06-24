@@ -16,7 +16,6 @@ The solution avoids interaction, pairing, or scanning to align with Cham cultura
 ## :signal_strength: Layer 1: ESP32 BLE Firmware (main.cpp via ESP-IDF)
 
 Each ESP32 device functions as a **non-connectable BLE beacon**, configured with:
-
 - **BLE advertising name** hardcoded to either:
   - `"TraKieu_Apsara_Relief"`
   - `"Tara_Bodhisattva_Statue"`
@@ -30,7 +29,6 @@ Each ESP32 device functions as a **non-connectable BLE beacon**, configured with
 - Compiled using `idf.py build`, flashed via `idf.py -p COMx flash`
 
 Deployment details:
-
 - Battery powered (e.g., USB power bank)
 - Cased for physical protection in public museum settings
 - No user action required for operation
@@ -45,6 +43,7 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
 
 1. Scans for BLE advertisements using `flutter_blue_plus`
 2. Matches `advertisement.advName` against a static map:
+   
    ```dart
    const beaconToUrl = {
      'TraKieu_Apsara_Relief': 'https://google.com',
@@ -61,7 +60,7 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
 ## :art: Design and Cultural Requirements
 
 :heavy_check_mark: No Bluetooth pairing  
-:heavy_check_mark: No connectable services or user input
+:heavy_check_mark: No connectable services or user input  
 :heavy_check_mark: Beacon-only broadcast model (non-invasive)  
 :heavy_check_mark: Respectful artifact naming only  
 :heavy_check_mark: Can be used by multiple visitors simultaneously  
