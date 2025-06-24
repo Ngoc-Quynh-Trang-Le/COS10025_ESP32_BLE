@@ -60,12 +60,12 @@ Key behaviors:
 
 ## Design and Cultural Requirements
 
-[ ] No Bluetooth pairing  
-[ ] No connectable services or user input  
-[ ] Beacon-only broadcast model (non-invasive)  
-[ ] Respectful artifact naming only  
-[ ] Can be used by multiple visitors simultaneously  
-[ ] Artifact proximity awareness without touching the objects  
+[] No Bluetooth pairing  
+[] No connectable services or user input  
+[] Beacon-only broadcast model (non-invasive)  
+[] Respectful artifact naming only  
+[] Can be used by multiple visitors simultaneously  
+[] Artifact proximity awareness without touching the objects  
 
 ---
 
