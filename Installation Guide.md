@@ -93,10 +93,12 @@ done
 #### Instructions to Run the Script
 1. Save the script as `install_to_all.sh` in your project root.
 2. Make it executable:
+
    ```bash
    chmod +x install_to_all.sh
    ```
 3. Run the script:
+
    ```bash
    ./install_to_all.sh
    ```
@@ -112,6 +114,8 @@ idf.py build
 idf.py -p COM3 flash
 idf.py monitor
 ```
+
+Optional `idf.py fullclean` to clean the build directory before building.
 
 ---
 
@@ -150,9 +154,7 @@ On Git Bash, run:
 ### 🔁 Troubleshooting (if squiggles remain)
 
 - Restart VS Code (or press `Ctrl+Shift+P → Reload Window`)
-
 - Manually reconfigure ESP-IDF menuconfig: press `Ctrl+Shift+P → ESP-IDF: Reconfigure ESP-IDF Project`
-
 - If the IntelliSense still says "cannot open source file...":
 
   Force a rebuild (Clean and rebuild the project):
