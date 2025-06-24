@@ -47,14 +47,14 @@ The app (`Cham Story`) is built in Flutter, and functions as a **BLE scanner + U
 2. Matches `advertisement.advName` against a static map:
    ```dart
    const beaconToUrl = {
-     'TraKieu_Apsara_Relief': 'https://facebook.com',
+     'TraKieu_Apsara_Relief': 'https://google.com',
      'Tara_Bodhisattva_Statue': 'https://youtube.com',
    };
    ```
 3. On match: launches the linked cultural webpage via `url_launcher`
 4. Cooldown enforced to avoid repeat triggers within 30 seconds
 5. Requires **no UI interaction** (runs in background silently)
-6. Optimized for **offline-friendly sideloading** on Redmi A2 devices
+6. Optimized for **offline-friendly sideloading** on Android devices
 
 ---
 
