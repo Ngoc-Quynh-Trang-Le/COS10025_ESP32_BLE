@@ -19,7 +19,9 @@ ESP32 BLE beacon firmware for non-contact Cham artifact storytelling.
 // #include "esp_log.h" // Uncomment if you want to use ESP_LOGI/ESP_LOGE
 // static const char* TAG = "BLE_BEACON"; // Remove if not using logging
 
+// Select beacon name: uncomment ONE only
 #define DEVICE_NAME "TraKieu_Apsara_Relief"
+// #define DEVICE_NAME "Tara_Bodhisattva_Statue"
 
 // Advertisement parameters (non-connectable)
 static esp_ble_adv_params_t adv_params = {

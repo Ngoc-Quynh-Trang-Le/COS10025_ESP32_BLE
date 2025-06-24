@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "ble_beacon_nonconnectable",
-    "project_version":    "c37df3f-dirty",
+    "project_version":    "e3876a7-dirty",
     "project_path":       "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE",
     "idf_path":           "C:/Users/quynh/esp/v5.4.1/esp-idf",
     "build_dir":          "E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build",

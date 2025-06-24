@@ -25,7 +25,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   static const beaconToUrl = {
-    'TraKieu_Apsara_Relief': 'https://www.facebook.com',
+    'TraKieu_Apsara_Relief': 'https://www.google.com',
     'Tara_Bodhisattva_Statue': 'https://www.youtube.com',
   };
 
@@ -33,6 +33,8 @@ class _MyAppState extends State<MyApp> {
   final Duration _cooldown = const Duration(seconds: 30); // Reduced for testing
   late StreamSubscription<DiscoveredDevice> _scanSubscription;
   final FlutterReactiveBle _ble = FlutterReactiveBle();
+
+  String? _lastDetectedDeviceName;
 
   @override
   void initState() {
@@ -53,12 +55,20 @@ class _MyAppState extends State<MyApp> {
     _scanSubscription = _ble.scanForDevices(withServices: [], scanMode: ScanMode.lowLatency).listen((device) {
       print('Device: ${device.id} Name: ${device.name}');
       if (device.name.isNotEmpty && beaconToUrl.containsKey(device.name)) {
+        setState(() {
+          _lastDetectedDeviceName = device.name;
+        });
         final now = DateTime.now();
         final lastLaunch = _lastLaunchTimes[device.name];
         if (lastLaunch == null || now.difference(lastLaunch) > _cooldown) {
           _lastLaunchTimes[device.name] = now;
-          print('MATCHED: ${device.name} - launching URL');
-          _launchUrl(beaconToUrl[device.name]!);
+          print('MATCHED: ${device.name} - launching URL after delay');
+          Future.delayed(const Duration(seconds: 2), () {
+            // Only launch if the device name is still the last detected (avoid race)
+            if (_lastDetectedDeviceName == device.name) {
+              _launchUrl(beaconToUrl[device.name]!);
+            }
+          });
         } else {
           print('MATCHED: ${device.name} - cooldown active, not launching');
         }
@@ -89,10 +99,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    String displayText;
+    if (_lastDetectedDeviceName != null) {
+      // Replace underscores with spaces for readability
+      final readableName = _lastDetectedDeviceName!.replaceAll('_', ' ');
+      displayText = 'Opening $readableName Artifact Story...';
+    } else {
+      displayText = 'Scanning for BLE beacons...';
+    }
+    return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Opening Tra Kieu Apsara Relief Artifact Story...'),
+          child: Text(displayText),
         ),
       ),
     );
