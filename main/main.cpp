@@ -1,6 +1,6 @@
 /*
 COS10025 BLE-to-Web Cultural Storytelling System
-`Layer 1:` ESP32 BLE beacon firmware for non-contact Cham artifact storytelling.
+Layer 1: ESP32 BLE beacon firmware for non-contact Cham artifact storytelling.
 - Non-connectable BLE advertising only (ADV_NONCONN_IND)
 - Human-readable artifact name (e.g., "TraKieu_Apsara_Relief")
 - No GATT, no pairing, no connectable services
