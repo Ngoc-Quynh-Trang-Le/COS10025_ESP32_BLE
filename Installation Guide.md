@@ -56,6 +56,54 @@ adb install build/app/outputs/flutter-apk/app-release.apk
 
 ---
 
+### :soon: Install `Cham Story` App on Multiple Android Devices
+
+#### Bash Script (install_to_all.sh)
+
+```bash
+# Install the app on all connected Android devices using ADB
+#!/bin/bash
+
+APK_PATH="build/app/outputs/flutter-apk/app-release.apk"
+
+if [ ! -f "$APK_PATH" ]; then
+  echo "❌ APK not found at $APK_PATH"
+  exit 1
+fi
+
+echo "🔍 Checking connected devices..."
+DEVICES=$(adb devices | grep -w "device" | cut -f1)
+
+if [ -z "$DEVICES" ]; then
+  echo "⚠️  No devices detected via ADB"
+  exit 1
+fi
+
+for DEVICE in $DEVICES; do
+  echo "📱 Installing on $DEVICE ..."
+  adb -s "$DEVICE" install -r "$APK_PATH" >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo "✅ Installed successfully on $DEVICE"
+  else
+    echo "❌ Failed to install on $DEVICE"
+  fi
+echo "🎉 Installation complete on all devices!"
+done
+```
+#### Instructions to Run the Script
+1. Save the script as `install_to_all.sh` in your project root.
+2. Make it executable:
+   ```bash
+   chmod +x install_to_all.sh
+   ```
+3. Run the script:
+   ```bash
+   ./install_to_all.sh
+   ```
+It will cycle through all `adb devices` and install the `.apk`.
+
+---
+
 ## 2️⃣ BLE Beacons
 
 Compile and flash the ESP32 firmware using ESP-IDF.
