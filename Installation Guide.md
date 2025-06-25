@@ -181,8 +181,3 @@ On Git Bash, run:
 - If you still see issues, try deleting the `.vscode` folder in your project root and reconfigure.
 
 ---
-
-
-
-
-
