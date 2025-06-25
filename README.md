@@ -15,7 +15,7 @@ The solution avoids interaction, pairing, or scanning to align with Cham cultura
 
 ---
 
-## :signal_strength: Layer 1: ESP32 BLE Firmware (main.cpp via ESP-IDF)
+## :signal_strength: Layer 1: ESP32 BLE Firmware (`main.cpp` via ESP-IDF)
 
 Each ESP32 device functions as a **non-connectable BLE beacon**, configured with:
 
@@ -83,7 +83,7 @@ The app is designed to be sideloaded as an `.apk` file, with no Play Store depen
 
 | Layer           | Specification                                                   |
 |-----------------|-----------------------------------------------------------------|
-| BLE Firmware    | ESP-IDF v5.4.1 (C++ - `main.cpp`)                               |
+| BLE Firmware    | ESP32-D0WD-V3, ESP-IDF v5.4.1 (C++, `main.cpp`)                 |
 | Mobile App      | Flutter (Android only, `main.dart`)                             |
 | Deployment      | Sideload `.apk` on Android devices                              |
 | Story Hosting   | Pages hosted at `https://google.com` or `https://youtube.com`   |
