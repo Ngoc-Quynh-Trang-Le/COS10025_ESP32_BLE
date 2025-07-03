@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/bootloader/bootloader.elf
+    add-symbol-file E:/Y1_Semester3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/ble_beacon_nonconnectable.elf
+file E:/Y1_Semester3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/ble_beacon_nonconnectable.elf

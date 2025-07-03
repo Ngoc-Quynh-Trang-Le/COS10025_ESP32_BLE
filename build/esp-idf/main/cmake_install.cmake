@@ -1,4 +1,4 @@
-# Install script for directory: E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/main
+# Install script for directory: E:/Y1_Semester3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-/* * Data converted from E:/Y1_Semester_3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from E:/Y1_Semester3/COS10025_Technology_in_an_Indigenous_Context_Project/Assignment/COS10025_ESP32_BLE/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 #if !defined (__APPLE__) && !defined (__linux__)

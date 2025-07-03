@@ -27,8 +27,8 @@ ADDED: Blink an LED and buzz a buzzer on GPIO23 every 3 seconds.
 // ─────────────────────────────────────────────────────────────────────────────
 // Define a fixed beacon name corresponding to a Cham artifact.
 // Uncomment to switch to another active DEVICE_NAME compiled by once at a time.
-#define DEVICE_NAME "TraKieu_Apsara_Relief"
-// #define DEVICE_NAME "Tara_Bodhisattva_Statue"
+// #define DEVICE_NAME "TraKieu_Apsara_Relief"
+#define DEVICE_NAME "Tara_Bodhisattva_Statue"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // No GPIO configuration for LED and Buzzer

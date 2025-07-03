@@ -1,6 +1,6 @@
 /* Automatically generated file; DO NOT EDIT */
 /* Espressif IoT Development Framework Linker Script */
-/* Generated from: E:\Y1_Semester_3\COS10025_Technology_in_an_Indigenous_Context_Project\Assignment\COS10025_ESP32_BLE\build\esp-idf\esp_system\ld\sections.ld.in */
+/* Generated from: E:\Y1_Semester3\COS10025_Technology_in_an_Indigenous_Context_Project\Assignment\COS10025_ESP32_BLE\build\esp-idf\esp_system\ld\sections.ld.in */
 
 /*
 
